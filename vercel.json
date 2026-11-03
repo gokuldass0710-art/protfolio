@@ -16,6 +16,10 @@
     {
       "source": "/images/:path*",
       "destination": "/public/images/:path*"
+    },
+        {
+      "source": "/resume/:path*",
+      "destination": "/public/resume/:path*"
     }
   ]
 }
