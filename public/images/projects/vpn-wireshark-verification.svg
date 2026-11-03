@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <rect width="100%" height="100%" fill="#080B10" />
+  <rect x="2" y="2" width="796" height="446" fill="#0D121B" stroke="#263244" stroke-width="2" rx="8" />
+
+  <!-- Wireshark Window Header -->
+  <rect x="2" y="2" width="796" height="36" fill="#111827" rx="8" />
+  <circle cx="25" cy="20" r="5" fill="#EF4444" />
+  <circle cx="45" cy="20" r="5" fill="#F59E0B" />
+  <circle cx="65" cy="20" r="5" fill="#10B981" />
+  <text x="95" y="24" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="12">Wireshark v4.x - [Ethernet0 - OpenVPN UDP Encapsulation]</text>
+
+  <!-- Filter Bar -->
+  <rect x="15" y="48" width="770" height="28" rx="4" fill="#080B10" stroke="#00F5A0" stroke-width="1" />
+  <text x="25" y="67" fill="#00F5A0" font-family="'JetBrains Mono', monospace" font-size="11">Filter: udp.port == 1194 &amp;&amp; ip.addr == 192.168.100.1</text>
+
+  <!-- Packet Table -->
+  <g font-family="'JetBrains Mono', monospace" font-size="11">
+    <!-- Header -->
+    <rect x="15" y="85" width="770" height="24" fill="#111827" />
+    <text x="25" y="101" fill="#38BDF8">No.</text>
+    <text x="75" y="101" fill="#38BDF8">Time</text>
+    <text x="145" y="101" fill="#38BDF8">Source</text>
+    <text x="315" y="101" fill="#38BDF8">Destination</text>
+    <text x="495" y="101" fill="#38BDF8">Protocol</text>
+    <text x="585" y="101" fill="#38BDF8">Length</text>
+    <text x="655" y="101" fill="#38BDF8">Info</text>
+
+    <!-- Row 1 -->
+    <text x="25" y="130" fill="#94A3B8">1</text>
+    <text x="75" y="130" fill="#94A3B8">0.000000</text>
+    <text x="145" y="130" fill="#F8FAFC">192.168.100.15</text>
+    <text x="315" y="130" fill="#F8FAFC">192.168.100.1</text>
+    <text x="495" y="130" fill="#00F5A0">OpenVPN</text>
+    <text x="585" y="130" fill="#94A3B8">86</text>
+    <text x="655" y="130" fill="#F8FAFC">P_CONTROL_HARD_RESET_CLIENT_V2</text>
+
+    <!-- Row 2 -->
+    <text x="25" y="155" fill="#94A3B8">2</text>
+    <text x="75" y="155" fill="#94A3B8">0.004120</text>
+    <text x="145" y="155" fill="#F8FAFC">192.168.100.1</text>
+    <text x="315" y="155" fill="#F8FAFC">192.168.100.15</text>
+    <text x="495" y="155" fill="#00F5A0">OpenVPN</text>
+    <text x="585" y="155" fill="#94A3B8">94</text>
+    <text x="655" y="155" fill="#F8FAFC">P_CONTROL_HARD_RESET_SERVER_V2</text>
+
+    <!-- Row 3 -->
+    <text x="25" y="180" fill="#94A3B8">3</text>
+    <text x="75" y="180" fill="#94A3B8">0.015200</text>
+    <text x="145" y="180" fill="#F8FAFC">192.168.100.15</text>
+    <text x="315" y="180" fill="#F8FAFC">192.168.100.1</text>
+    <text x="495" y="180" fill="#38BDF8">TLSv1.3</text>
+    <text x="585" y="180" fill="#94A3B8">258</text>
+    <text x="655" y="180" fill="#38BDF8">Client Hello, Key Exchange</text>
+
+    <!-- Row 4 -->
+    <text x="25" y="205" fill="#94A3B8">4</text>
+    <text x="75" y="205" fill="#94A3B8">0.021000</text>
+    <text x="145" y="205" fill="#F8FAFC">192.168.100.1</text>
+    <text x="315" y="205" fill="#F8FAFC">192.168.100.15</text>
+    <text x="495" y="205" fill="#38BDF8">TLSv1.3</text>
+    <text x="585" y="205" fill="#94A3B8">1420</text>
+    <text x="655" y="205" fill="#38BDF8">Server Hello, Certificate, Finish</text>
+
+    <!-- Row 5 (Data payload) -->
+    <rect x="15" y="220" width="770" height="25" fill="#111827" stroke="#00F5A0" stroke-width="1" />
+    <text x="25" y="237" fill="#00F5A0">5</text>
+    <text x="75" y="237" fill="#00F5A0">0.045000</text>
+    <text x="145" y="237" fill="#00F5A0">192.168.100.15</text>
+    <text x="315" y="237" fill="#00F5A0">192.168.100.1</text>
+    <text x="495" y="237" fill="#00F5A0">OpenVPN</text>
+    <text x="585" y="237" fill="#00F5A0">144</text>
+    <text x="655" y="237" fill="#00F5A0">P_DATA_V2 (Encrypted Ciphertext - AES-256-GCM)</text>
+  </g>
+
+  <!-- Inspection Panel -->
+  <rect x="15" y="270" width="770" height="150" rx="4" fill="#080B10" stroke="#263244" stroke-width="1" />
+  <text x="30" y="300" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="12">Frame 5: 144 bytes on wire (1152 bits), 144 bytes captured</text>
+  <text x="30" y="325" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="11">&gt; User Datagram Protocol, Src Port: 53120, Dst Port: 1194</text>
+  <text x="30" y="350" fill="#00F5A0" font-family="'JetBrains Mono', monospace" font-size="11">&gt; OpenVPN Protocol (Data Channel V2)</text>
+  <text x="50" y="375" fill="#F8FAFC" font-family="'JetBrains Mono', monospace" font-size="11">Key-ID: 0, Peer ID: 0, Encrypted IV + Payload (AES-256-GCM Verified)</text>
+  <text x="50" y="398" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="11">Integrity Tag: a4 9b 12 c8 7e fd 42 10 33 bc 88 19</text>
+</svg>
+

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <rect width="100%" height="100%" fill="#080B10" />
+  <rect x="2" y="2" width="796" height="446" fill="#0D121B" stroke="#263244" stroke-width="2" rx="8" />
+
+  <!-- Wireshark Window Header -->
+  <rect x="2" y="2" width="796" height="36" fill="#111827" rx="8" />
+  <circle cx="25" cy="20" r="5" fill="#EF4444" />
+  <circle cx="45" cy="20" r="5" fill="#F59E0B" />
+  <circle cx="65" cy="20" r="5" fill="#10B981" />
+  <text x="95" y="24" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="12">Wireshark - [IoT Segment Packet Capture: Cleartext MQTT &amp; SSDP]</text>
+
+  <!-- Filter -->
+  <rect x="15" y="48" width="770" height="28" rx="4" fill="#080B10" stroke="#F43F5E" stroke-width="1" />
+  <text x="25" y="67" fill="#F43F5E" font-family="'JetBrains Mono', monospace" font-size="11">Filter: mqtt.msgtype == 3 || ssdp || mdns</text>
+
+  <!-- Content -->
+  <g font-family="'JetBrains Mono', monospace" font-size="11">
+    <rect x="15" y="85" width="770" height="24" fill="#111827" />
+    <text x="25" y="101" fill="#38BDF8">No.</text>
+    <text x="75" y="101" fill="#38BDF8">Source</text>
+    <text x="210" y="101" fill="#38BDF8">Destination</text>
+    <text x="360" y="101" fill="#38BDF8">Protocol</text>
+    <text x="440" y="101" fill="#38BDF8">Info</text>
+
+    <text x="25" y="130" fill="#94A3B8">14</text>
+    <text x="75" y="130" fill="#F8FAFC">192.168.30.45</text>
+    <text x="210" y="130" fill="#F8FAFC">239.255.255.250</text>
+    <text x="360" y="130" fill="#F59E0B">SSDP</text>
+    <text x="440" y="130" fill="#94A3B8">M-SEARCH * HTTP/1.1 (Device model: CAM-SMART-GEN2)</text>
+
+    <rect x="15" y="145" width="770" height="25" fill="#111827" stroke="#F43F5E" stroke-width="1" />
+    <text x="25" y="162" fill="#F43F5E">18</text>
+    <text x="75" y="162" fill="#F43F5E">192.168.30.45</text>
+    <text x="210" y="162" fill="#F43F5E">192.168.30.1</text>
+    <text x="360" y="162" fill="#F43F5E">MQTT</text>
+    <text x="440" y="162" fill="#F43F5E">Publish Message [Topic: home/sensor/state, QoS: 0] (Unencrypted)</text>
+  </g>
+
+  <!-- Dissection Box -->
+  <rect x="15" y="190" width="770" height="235" rx="4" fill="#080B10" stroke="#263244" stroke-width="1" />
+  <text x="30" y="215" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="12">&gt; Transmission Control Protocol, Src Port: 49152, Dst Port: 1883</text>
+  <text x="30" y="240" fill="#F43F5E" font-family="'JetBrains Mono', monospace" font-size="12">&gt; MQ Telemetry Transport Protocol (Publish Message)</text>
+  <text x="50" y="265" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="11">Header Flags: 0x30, Message Type: Publish Message (3)</text>
+  <text x="50" y="290" fill="#00F5A0" font-family="'JetBrains Mono', monospace" font-size="11">Topic Length: 17, Topic: home/sensor/state</text>
+  <text x="50" y="315" fill="#F43F5E" font-family="'JetBrains Mono', monospace" font-size="11">Message Payload (Cleartext JSON):</text>
+  <text x="70" y="340" fill="#F8FAFC" font-family="'JetBrains Mono', monospace" font-size="11">{"device_id":"CAM_98A4","status":"online","firmware":"v1.0.4","temp_c":24.6}</text>
+  <text x="50" y="380" fill="#F59E0B" font-family="'JetBrains Mono', monospace" font-size="11">Analysis: Device serial, status, and telemetry sent in cleartext without TLS authentication.</text>
+  <text x="50" y="402" fill="#00F5A0" font-family="'JetBrains Mono', monospace" font-size="11">Mitigation: Enforce MQTTS (Port 8883) with TLS 1.3 &amp; client certificate authentication.</text>
+</svg>
+

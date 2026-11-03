@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.env
+.env.local
+.DS_Store
+*.log
+
+# Local backups and reference media are not part of the deployable portfolio
+backup-pre-redesign-*/
+reference-video.mp4
+

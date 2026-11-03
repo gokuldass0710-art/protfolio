@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <rect width="100%" height="100%" fill="#080B10" />
+  <rect x="2" y="2" width="796" height="446" fill="#0D121B" stroke="#263244" stroke-width="2" rx="8" />
+
+  <!-- Title Badge -->
+  <rect x="30" y="25" width="480" height="34" rx="4" fill="#111827" stroke="#38BDF8" stroke-width="1.5" />
+  <text x="45" y="47" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="bold">OPEN REDIRECTION: FLOW &amp; REMEDIATION LOGIC</text>
+
+  <!-- Flow 1: Vulnerable -->
+  <rect x="30" y="80" width="740" height="150" rx="6" fill="#111827" stroke="#F43F5E" stroke-width="1.5" />
+  <text x="45" y="105" fill="#F43F5E" font-family="'Inter', sans-serif" font-size="13" font-weight="bold">[VULNERABLE FLOW] Direct URL Parameter Trust</text>
+
+  <!-- Victim Click -->
+  <rect x="45" y="125" width="200" height="85" rx="4" fill="#080B10" stroke="#263244" />
+  <text x="55" y="145" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="10">1. Victim clicks link:</text>
+  <text x="55" y="165" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="9">https://trusted-site.com/login</text>
+  <text x="55" y="180" fill="#F43F5E" font-family="'JetBrains Mono', monospace" font-size="9">?next=https://attacker-phish.com</text>
+
+  <path d="M 245 167 L 305 167" stroke="#F43F5E" stroke-width="2" marker-end="url(#arrow)" />
+
+  <!-- Server Response -->
+  <rect x="310" y="125" width="210" height="85" rx="4" fill="#080B10" stroke="#F43F5E" />
+  <text x="320" y="145" fill="#F8FAFC" font-family="'JetBrains Mono', monospace" font-size="10">2. Server sends redirect:</text>
+  <text x="320" y="165" fill="#F59E0B" font-family="'JetBrains Mono', monospace" font-size="9">HTTP/1.1 302 Found</text>
+  <text x="320" y="180" fill="#F43F5E" font-family="'JetBrains Mono', monospace" font-size="9">Location: https://attacker-phish.com</text>
+  <text x="320" y="195" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="9">No validation performed!</text>
+
+  <path d="M 520 167 L 575 167" stroke="#F43F5E" stroke-width="2" />
+
+  <!-- Phishing Page -->
+  <rect x="580" y="125" width="180" height="85" rx="4" fill="#080B10" stroke="#F43F5E" />
+  <text x="590" y="145" fill="#F43F5E" font-family="'JetBrains Mono', monospace" font-size="10">3. Browser navigates:</text>
+  <text x="590" y="165" fill="#F8FAFC" font-family="'JetBrains Mono', monospace" font-size="9">Victim lands on phishing</text>
+  <text x="590" y="180" fill="#F8FAFC" font-family="'JetBrains Mono', monospace" font-size="9">page believing it came</text>
+  <text x="590" y="195" fill="#F43F5E" font-family="'JetBrains Mono', monospace" font-size="9">from trusted domain.</text>
+
+  <!-- Flow 2: Remediated -->
+  <rect x="30" y="250" width="740" height="170" rx="6" fill="#111827" stroke="#00F5A0" stroke-width="1.5" />
+  <text x="45" y="275" fill="#00F5A0" font-family="'Inter', sans-serif" font-size="13" font-weight="bold">[SECURE FLOW] Strict Server-Side Allowlist / Relative Path Binding</text>
+
+  <rect x="45" y="295" width="200" height="105" rx="4" fill="#080B10" stroke="#263244" />
+  <text x="55" y="315" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="10">1. Client Request:</text>
+  <text x="55" y="335" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="9">POST /login</text>
+  <text x="55" y="350" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="9">return_to=/dashboard</text>
+  <text x="55" y="375" fill="#00F5A0" font-family="'JetBrains Mono', monospace" font-size="9">(Only relative paths accepted)</text>
+
+  <rect x="310" y="295" width="210" height="105" rx="4" fill="#080B10" stroke="#00F5A0" />
+  <text x="320" y="315" fill="#00F5A0" font-family="'JetBrains Mono', monospace" font-size="10">2. Server Validation:</text>
+  <text x="320" y="335" fill="#F8FAFC" font-family="'JetBrains Mono', monospace" font-size="9">if (!isValidRelativePath(url))</text>
+  <text x="320" y="350" fill="#F43F5E" font-family="'JetBrains Mono', monospace" font-size="9">  fallbackToDefault();</text>
+  <text x="320" y="375" fill="#00F5A0" font-family="'JetBrains Mono', monospace" font-size="9">Reject external protocols</text>
+
+  <rect x="580" y="295" width="180" height="105" rx="4" fill="#080B10" stroke="#00F5A0" />
+  <text x="590" y="315" fill="#00F5A0" font-family="'JetBrains Mono', monospace" font-size="10">3. Safe Redirection:</text>
+  <text x="590" y="335" fill="#F8FAFC" font-family="'JetBrains Mono', monospace" font-size="9">Location: /dashboard</text>
+  <text x="590" y="360" fill="#00F5A0" font-family="'JetBrains Mono', monospace" font-size="9">User remains safely</text>
+  <text x="590" y="375" fill="#00F5A0" font-family="'JetBrains Mono', monospace" font-size="9">within authenticated app.</text>
+</svg>
+

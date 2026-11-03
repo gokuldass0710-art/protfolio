@@ -1,0 +1,27 @@
+{
+  "name": "gokul-dass-kannan-portfolio",
+  "version": "1.0.0",
+  "description": "Gokul Dass Kannan - Cybersecurity Portfolio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "serve": "node server.js",
+    "dev": "node server.js",
+    "build": "node server.js --verify"
+  },
+  "keywords": [
+    "cybersecurity",
+    "portfolio",
+    "soc",
+    "blue-team",
+    "sysmon",
+    "wazuh",
+    "wireshark",
+    "burp-suite",
+    "openvpn"
+  ],
+  "author": "Gokul Dass Kannan",
+  "license": "MIT"
+}
+

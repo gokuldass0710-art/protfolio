@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <rect width="100%" height="100%" fill="#080B10" />
+  <rect x="2" y="2" width="796" height="446" fill="#0D121B" stroke="#263244" stroke-width="2" rx="8" />
+
+  <!-- Terminal Window Bar -->
+  <rect x="2" y="2" width="796" height="36" fill="#111827" rx="8" />
+  <circle cx="25" cy="20" r="5" fill="#EF4444" />
+  <circle cx="45" cy="20" r="5" fill="#F59E0B" />
+  <circle cx="65" cy="20" r="5" fill="#10B981" />
+  <text x="95" y="25" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="12">powershell - Event Log Inspection &amp; Sysmon Filter</text>
+
+  <!-- Terminal Content -->
+  <g font-family="'JetBrains Mono', monospace" font-size="12">
+    <text x="30" y="65" fill="#38BDF8">PS C:\&gt; Get-WinEvent -FilterHashtable @{LogName='Microsoft-Windows-Sysmon/Operational'; Id=1} -MaxEvents 1 | Format-List</text>
+
+    <text x="30" y="100" fill="#94A3B8">TimeCreated  : 2026-10-24 14:22:08.412</text>
+    <text x="30" y="125" fill="#94A3B8">ProviderName : Microsoft-Windows-Sysmon</text>
+    <text x="30" y="150" fill="#00F5A0">Id           : 1 (Process Create)</text>
+    <text x="30" y="175" fill="#94A3B8">ProcessId    : 4892</text>
+    <text x="30" y="200" fill="#F8FAFC">Image        : C:\Windows\System32\cmd.exe</text>
+    <text x="30" y="225" fill="#F43F5E">CommandLine  : "C:\Windows\System32\cmd.exe" /c whoami &amp; net user</text>
+    <text x="30" y="250" fill="#38BDF8">ParentImage  : C:\Windows\System32\wsmprovhost.exe</text>
+    <text x="30" y="275" fill="#94A3B8">ParentCommandLine : C:\Windows\system32\wsmprovhost.exe -HostId {...}</text>
+    <text x="30" y="300" fill="#F8FAFC">User         : LAB\Administrator</text>
+    <text x="30" y="325" fill="#38BDF8">Hashes       : SHA256=2C4D...[TRUNCATED]</text>
+
+    <!-- Wazuh SIEM Log Correlation Box -->
+    <rect x="25" y="355" width="750" height="70" rx="4" fill="#111827" stroke="#00F5A0" stroke-width="1.5" />
+    <text x="40" y="380" fill="#00F5A0" font-weight="bold">WAZUH ALERT (CORRELATION OUTPUT):</text>
+    <text x="40" y="405" fill="#F8FAFC">Rule 902010 (Level 10): Suspicious command execution via WinRM provider host (wsmprovhost.exe -&gt; cmd.exe)</text>
+  </g>
+</svg>
+

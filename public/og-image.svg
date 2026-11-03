@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080B10" />
+      <stop offset="100%" stop-color="#0D121B" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect x="20" y="20" width="1160" height="590" fill="none" stroke="#263244" stroke-width="2" rx="12" />
+
+  <!-- Grid decoration -->
+  <g opacity="0.1" stroke="#38BDF8" stroke-width="1">
+    <line x1="0" y1="100" x2="1200" y2="100" />
+    <line x1="0" y1="200" x2="1200" y2="200" />
+    <line x1="0" y1="300" x2="1200" y2="300" />
+    <line x1="0" y1="400" x2="1200" y2="400" />
+    <line x1="0" y1="500" x2="1200" y2="500" />
+    <line x1="200" y1="0" x2="200" y2="630" />
+    <line x1="400" y1="0" x2="400" y2="630" />
+    <line x1="600" y1="0" x2="600" y2="630" />
+    <line x1="800" y1="0" x2="800" y2="630" />
+    <line x1="1000" y1="0" x2="1000" y2="630" />
+  </g>
+
+  <!-- Logo Pill -->
+  <rect x="80" y="80" width="80" height="80" rx="16" fill="#111827" stroke="#00F5A0" stroke-width="2" />
+  <text x="120" y="132" text-anchor="middle" fill="#00F5A0" font-family="'JetBrains Mono', monospace" font-size="32" font-weight="bold">GK.</text>
+
+  <!-- Title -->
+  <text x="80" y="240" fill="#F8FAFC" font-family="'Inter', -apple-system, sans-serif" font-size="52" font-weight="800">Gokul Dass Kannan</text>
+  <text x="80" y="300" fill="#00F5A0" font-family="'JetBrains Mono', monospace" font-size="28" font-weight="600">Aspiring Cybersecurity Professional</text>
+  <text x="80" y="350" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="22">SOC / Security Analysis • Ethical Hacking • Network Defense • Web App Testing</text>
+
+  <!-- Tag Badges -->
+  <g font-family="'JetBrains Mono', monospace" font-size="16">
+    <rect x="80" y="420" width="160" height="42" rx="8" fill="#111827" stroke="#263244" />
+    <text x="160" y="447" text-anchor="middle" fill="#38BDF8">Wazuh SIEM</text>
+
+    <rect x="260" y="420" width="140" height="42" rx="8" fill="#111827" stroke="#263244" />
+    <text x="330" y="447" text-anchor="middle" fill="#38BDF8">Sysmon</text>
+
+    <rect x="420" y="420" width="160" height="42" rx="8" fill="#111827" stroke="#263244" />
+    <text x="500" y="447" text-anchor="middle" fill="#38BDF8">Wireshark</text>
+
+    <rect x="600" y="420" width="160" height="42" rx="8" fill="#111827" stroke="#263244" />
+    <text x="680" y="447" text-anchor="middle" fill="#38BDF8">Burp Suite</text>
+
+    <rect x="780" y="420" width="160" height="42" rx="8" fill="#111827" stroke="#263244" />
+    <text x="860" y="447" text-anchor="middle" fill="#38BDF8">OpenVPN</text>
+  </g>
+
+  <text x="80" y="540" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="16">Hands-on lab evidence • Realistic detection engineering • Defense-in-depth</text>
+</svg>
+
