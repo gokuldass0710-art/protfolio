@@ -178,7 +178,7 @@ export async function handleContactSubmission({ name, email, subject, message, h
 
     let specificError = "Unable to send your message right now. Please try again later.";
     if (isKeyMissingOrPlaceholder) {
-      specificError = "Setup required: Please paste your RESEND_API_KEY into the .env file in your project folder.";
+      specificError = "Message delivery is temporarily unavailable. Please email gokuldass0710@gmail.com directly.";
     } else if (isContactEmailMissingOrPlaceholder) {
       specificError = "Setup required: Please set your receiving email in CONTACT_EMAIL in the .env file.";
     }
